@@ -27,6 +27,10 @@ class LoginFragment : Fragment() {
 //         val viewModel: LoginViewModel = ViewModelProvider(this,viewModelFactory).get(LoginViewModel::class.java)
 //
 
+
+
+
+
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater,
             R.layout.fragment_login,container,false)
 
