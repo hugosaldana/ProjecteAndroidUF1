@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.androiduf1.database.Userdatabase
 
 import com.example.projecteandroiduf1.R
 import com.example.projecteandroiduf1.databinding.FragmentLoginBinding
@@ -21,11 +22,11 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
          val application = requireNotNull(this.activity).application
-//        val database = Userdatabase.getInstance(application).LoginDatabaseDao
-//        val viewModelFactory = LoginViewModelFactory(database, application)
-//
-//         val viewModel: LoginViewModel = ViewModelProvider(this,viewModelFactory).get(LoginViewModel::class.java)
-//
+        val database = Userdatabase.getInstance(application).LoginDatabaseDao
+        val viewModelFactory = LoginViewModelFactory(database, application)
+
+         val viewModel: LoginViewModel = ViewModelProvider(this,viewModelFactory).get(LoginViewModel::class.java)
+
 
 
 

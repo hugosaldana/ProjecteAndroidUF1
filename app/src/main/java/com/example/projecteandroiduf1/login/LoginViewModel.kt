@@ -13,7 +13,7 @@ class LoginViewModel (val database: dao,
     }
 
 
-//    fun existeix(nom: String, contrasenya: String): Boolean {
-//        return database.correcte(nom,contrasenya) == 1
-//    }
+   fun existeix(nom: String, contrasenya: String): Boolean {
+        return database.correcte(nom,contrasenya) == 1
+    }
 }
