@@ -11,7 +11,7 @@ import java.util.HashMap
 interface dao {
 
     @Insert
-    fun insert(user: Usuari)
+    fun insert(user: Usuari?)
 
     @Update
     fun update(user: Usuari)

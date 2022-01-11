@@ -16,12 +16,12 @@ import com.example.projecteandroiduf1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.i("LoginFragment", "Start")
+
         val binding = DataBindingUtil.inflate<FragmentLoginBinding>(inflater,
             R.layout.fragment_login,container,false)
 
@@ -31,18 +31,23 @@ class LoginFragment : Fragment() {
 
         val viewModel: LoginViewModel = ViewModelProvider(this,viewModelFactory).get(LoginViewModel::class.java)
 
+        binding.apply {
+            Loginbutton.setOnClickListener { view: View ->
+                view.findNavController().navigate(R.id.action_LoginFragment_to_mainFragment)
+                Log.i("Loginbutton", "Loginbutton press")
+
+            }
 
 
-        binding.Loginbutton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_LoginFragment_to_mainFragment)
-            Log.i("Loginbutton", "Loginbutton press")
-
+            Registratboto.setOnClickListener { view: View ->
+                view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+                Log.i("Registratbutton", "Resgistratbutton press")
+            }
         }
 
-        binding.loginViewModel = viewModel
-        binding.setLifecycleOwner(this)
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
+            // Inflate the layout for this fragment
+            return binding.root
+        }
 
 }
+
